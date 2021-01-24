@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import '../Css/displayUserList.css'
 export const UserDetails = (props) => {
 	const userDetail = useSelector((state) => state.displayTasks)
 	const user = userDetail.user ? userDetail.user : ''
@@ -11,9 +12,15 @@ export const UserDetails = (props) => {
 			<br />
 			<h3>Total number of replies : {commentList.length}</h3>
 			<hr />
-			{commentList.map((ele) => {
-				return <li>{ele}</li>
-			})}
+			<table>
+				{commentList.map((ele) => {
+					return (
+						<tr>
+							<td>{ele}</td>
+						</tr>
+					)
+				})}
+			</table>
 		</>
 	)
 }

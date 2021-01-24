@@ -1,13 +1,10 @@
 import React, { useState } from 'react'
 import { Row, Col, Card, Form } from 'react-bootstrap'
 import { useFormik } from 'formik'
-import { Redirect } from 'react-router-dom'
-import Upload from './Upload'
 import swal from 'sweetalert'
 import { validationSchema } from '../Schema/validationSchema'
 const Login = (props) => {
 	const { setLoginStatus } = props
-	const [toggle, setToggle] = useState(false)
 	const [errorToggle, setErrorToggle] = useState(false)
 	const users = [
 		{ email: 'anirudda@gmail.com', password: 'hello@123' },

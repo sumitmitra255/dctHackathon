@@ -20,11 +20,24 @@ function Upload(props) {
 	}
 
 	return (
-		<div>
+		<>
 			<Logout setLoginStatus={setLoginStatus} />
-			<input type='file' accept='text/plain' onChange={openFile}></input>
-			{dataToggle ? <DisplayUserList /> : ''}
-		</div>
+			<br />
+			<hr />
+			<table>
+				<tr>
+					<td>
+						<input type='file' accept='text/plain' onChange={openFile}></input>
+					</td>
+				</tr>
+			</table>
+			<br />
+			<hr />
+			{/* <td>{dataToggle ? <DisplayUserList /> : ''}</td> */}
+			<td>
+				<DisplayUserList />
+			</td>
+		</>
 	)
 }
 

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, useHistory } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import displayAction from '../Actions/displayAction'
 import { ChartsDisplay } from './ChartsDisplay'
+import '../Css/displayUserList.css'
 export const DisplayUserList = (props) => {
 	const alltasks = useSelector((state) => state.allTasks)
 	console.log(alltasks)
@@ -15,31 +16,26 @@ export const DisplayUserList = (props) => {
 		dispatch(displayAction(userelement, words, history))
 	}
 	return (
-		<>
-			<table>
-				<tr>
-					<td>
-						<ul>
-							{userName.map((ele) => {
-								return (
-									<>
-										<li
-											onClick={() => {
-												liClick(ele, words)
-											}}>
-											{ele}
-										</li>
-									</>
-								)
-							})}
-						</ul>
-					</td>
-					<td> </td>
-					<td>
-						<ChartsDisplay />
-					</td>
-				</tr>
-			</table>
-		</>
+		<dic className='flexbox'>
+			<div className='tab'>
+				<table className='center'>
+					{userName.map((ele) => {
+						return (
+							<tr>
+								<td
+									onClick={() => {
+										liClick(ele, words)
+									}}>
+									{ele}
+								</td>
+							</tr>
+						)
+					})}
+				</table>
+			</div>
+			<div>
+				<ChartsDisplay />
+			</div>
+		</dic>
 	)
 }

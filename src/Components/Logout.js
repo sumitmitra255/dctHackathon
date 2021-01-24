@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import Button from 'react-bootstrap/Button'
 export const Logout = (props) => {
 	const { setLoginStatus } = props
 
@@ -8,7 +9,9 @@ export const Logout = (props) => {
 	}
 	return (
 		<>
-			<button onClick={logoutUser}>Logout</button>
+			<Button variant='success' onClick={logoutUser}>
+				Logout
+			</Button>
 		</>
 	)
 }
